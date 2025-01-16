@@ -1,0 +1,128 @@
+
+
+'****' is not recognized as an İnternal or external command hatası alıyorum ?
+Windows ve diğer işletim sistemleri terminale yazılan herhangi bir komutu bulabilmek için tanımlanmış PATH değişkenine bakar. Örneğin siz python test.py yazdığınızda PATH değişkeninde bilgisayarınızda bulunan python.exe'yi arar. Ancak siz PATH değişkenine bu dizini eklemediyseniz bu hatayı alırsınız. Bu durum, herhangi bir komut için geçerlidir.
+
+PATH değişkenine exe dosyalarını tanıtma (Örnek : python.exe )
+
+Path eklemek için sırasıyla Bilgisayar (sağ tık)> Özellikler>Gelişmiş Sistem Ayarları>Ortam Değişkenleri> Kullanıcı Değişkenleri listesinde ki PATH seçilip düzenle butonuna tıklanır. Python'ın kurulu olduğu dosya yolu eklenir ve ekranlar tamam butonuna tıklanarak kapatılır.
+
+*********************************************
+
+"***" is not defined hatası alıyorum ?
+Eğer bu hatayı alıyorsanız tanımlanmamış bir değişken adı ile işlem yapmaya çalışıyorsunuz demektir. Hatada belirtilen değişken adını kontrol edip tanımlarsanız sorun ortadan kalkacaktır.
+
+*******************************************
+
+Kurulumda PATH eklemezsek sorun olur mu ?
+Windows CMD ekranında "python" yazdığımız zaman Windows sistem değişkenlerin path değerine bakar. Eğer oraya python yazdığında gereken python.exe'yi çalıştırmasını ve Windows'un gereken dizini bulmasını sağlamak isterseniz yazmak zorundasınız. "Add Python To Path" bu işi bizim yerimize yapıyor ve bunu eklediğimiz zaman python arayüzünü cmdde kullanabiliyoruz.
+
+*****************************************
+
+list index out of range hatası alıyorum ?
+Bu hata listenin dışına çıktıysanız olmaktadır.
+
+liste = [1,2,3,4,5]
+
+liste[7] derseniz, böyle bir index olmadığı için listenin dışına çıkmışsınız demektir.
+
+****************************************
+
+Pycharmda Run butonu çalışmıyor ?
+"Configure Python Interpreter" yazan yere tıkladığınızda karşınıza muhtemelen boş bir alan gelecek sağ taraftan "+" işaretine basıp "anaconda" yı eklediğiniz dosyanın altında "make available to all projects" olana tıklarsanız ve kaydettikten sonra tekrar başlatırsanız sorunu çözebilirsiniz.
+
+*********************************************
+
+"from PyQt5 import QtWidgets" hatası alıyorum ?
+1. PyQt5 i tamamen kaldırın
+
+2. Ardından Konsola "pip install pyqt5" yazarak tekrar indirin.
+
+*****************************************
+
+Dosyadan okurken veri hatası alıyorum ?
+Sorun belirttiğiniz yoldan kaynaklı.
+
+Örnek : "C:\Users\Eric\Desktop\beeline.txt"
+
+Burada, "C:\Users ... içindeki '\U' , Unicode kaçışını temsil eder.
+
+Çözüm 1 : Tüm ters eğik çizgileri çoğaltmanız gerekir.
+
+"C:\\Users\\Eric\\Desktop\\beeline.txt"
+
+Çözüm 2 : String'i ile r (ham dize üretmek için).
+
+r"C:\Users\Eric\Desktop\beeline.txt"
+
+Çözüm 3 : pd.read_csv okurken encoding='utf-8' argümanını kullanıp deneyebilirsiniz.
+
+***********************************************
+
+Unable to create process using Spyder hatası alıyorum ?
+Aşağıdaki kodları çalıştırıp sorunu çözebilirsiniz.
+
+conda install -c conda-forge scrapy
+
+conda install -c conda-forge/label/cf201901 scrapy
+
+Bu, sorunu çözmezse, aşağıdaki kodu ek olarak deneyebilirsiniz
+
+pip install --force-reinstall scrapy
+
+**********************************************
+
+Anaconda 3 dosyası içinde hiç bir .exe dosyası bulunmuyor ?
+1. Kurulumu komple kaldırın.
+
+2. Daha sonra bilgisayarınızı yeniden başlatarak yeni kurulum yapın.
+
+3. Kurulumları kadırırken UnInstaller programından destek alabilirsiniz.
+
+4. Daha sonra tüm kurulum aşamalarını ayrıntılı olarak inceleyip birebir aynı olacak şekilde kurulumunuzu gerçekleştirin.
+
+***********************************************
+
+Anaconda "failed to create menus" hatası alıyorum ?
+Windows sistemine kurulum sırasında, “Failed to create Anaconda menus, Abort Retry Ignore” veya “Failed to add Anaconda to the system PATH.” yazan bir iletişim kutusu beliriyor. Bunun için birçok olası neden var.
+
+Bu çözümleri sırası ile deneyin:
+
+1. 1024 karakterden daha uzun PATH kurmayın.
+
+2. Yükleme sırasında antivirüs programlarını kapatın, sonra tekrar açın.
+
+3. Tüm önceki Python kurulumlarını kaldırın.
+
+4. Python ile ilgili tüm PATH'leri sysdm.cpl dosyasında temizleyin.
+
+*****************************************
+
+Error executing Jupyter command 'notebook' hatası alıyorum ?
+Kurulum aşamalarında oluşan teknik küçük bir hatadan dolayı sık sık alınan bir hatadır. Programı kaldırıp tekrardan bir kurulum sağlamanız sorunu çözecektir.
+
+**************************************
+
+'utf-8' codec can't decode byte *** in position *** hatası alıyorum ?
+Notepad++ ile dosyanızı UTF-8 ile kodlarsanız sorun kalmayacaktır.
+
+**************************************
+
+Kodlarım renklenmiyor ve VS Code kod yazarken otomatik tamamlama yapmıyor ?
+VS Code tamamen özelleştirilebilen bir kod editörüdür. Bu sayede kişiselleştirilmiş ve sadece size özel bir editöre sahip olmuş oluyorsunuz. Kişiselleştirmelerin bir kısmını ayarlar bölümünden yaparken bir kısmını ise eklentiler bölümünden eklenti indirerek yapabiliyorsunuz. Biz şimdilik kodlarımızın renklendirmek için eklentiler bölümünden yararlanacağız. Şimdi indireceğimiz eklentilere bakalım.
+
+"Syntax Highlight Guide" veya "Bracket Pair Colorizer" eklentilerinden birini indirerek kodlarınızın renklenmesini sağlayabilirsiniz.Bir dil veya frameworke geçiş yaparken mutlaka eklentisini indirmeniz gerekir. Örneğin Django eklentisini indirmezseniz, hem kodlarınızın renklenmeme sorunu ile karşılaşırsınız , hem de kodlarınızın otomatik olarak tamamlanmaz. VS Code editörünüzde Django eklentiniz var, fakat halâ kodlarınız otomatik tamamlanmıyorsa " CTRL+ ALT + SPACE " tuş kombinasyonunu deneyebilirsiniz. Böylelikle herhangi bir sorun kalmayacaktır.
+
+
+
+**************************************
+
+"tuple object has no attribute "pop" hatası alıyorum ?
+Buradaki sorun listenin köşeli parantez "[]" yerine normal parantez "()" ile yapılmış olmasıdır. Eğer normal parantezler ile liste yapmaya çalışırsak aslında demet (tuple) yapmış oluruz ve demet objelerinin pop veya append özelliği olmadığı için ' tuple object has no attribute "pop/append" ' hatası alınır.
+
+Liste örneği: list = [1,2,3,4,5]
+
+Demet (tuple) örneği: tuple = (1,2,3,4,5)
+
+*****************************************
+
